@@ -104,16 +104,17 @@ const Admin = () => {
 
   useEffect(() => {
     // Check if we're on admin-secret-url path
-    if (window.location.pathname === '/admin-secret-url') {
-      // Auto-login for secret URL
-      setIsLoggedIn(true);
-    }
+    // Remove this auto-login code completely
+    // if (window.location.pathname === '/admin-secret-url') {
+    //   setIsLoggedIn(true);
+    // }
   }, []);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     // Simple admin login - in a real application, use proper authentication
-    if (username === 'admin' && password === 'admin') {
+    if (username === import.meta.env.VITE_ADMIN_USERNAME && 
+        password === import.meta.env.VITE_ADMIN_PASSWORD) {
       setIsLoggedIn(true);
       toast({
         title: "Connexion réussie",
