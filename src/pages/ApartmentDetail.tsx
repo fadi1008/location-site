@@ -88,7 +88,7 @@ const ApartmentDetail = () => {
             <div className="bg-white shadow-md rounded-xl p-6">
               <div className="mb-6">
                 <h2 className="text-2xl font-serif mb-2">Prix</h2>
-                <p className="text-3xl font-medium text-nabeul-yellow">{apartment.price}</p>
+                <p className="text-3xl font-medium text-nabeul-yellow">{apartment.price} DT/nuit</p>
               </div>
               
               <div className="mb-6">

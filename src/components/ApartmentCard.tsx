@@ -31,7 +31,7 @@ const ApartmentCard: React.FC<ApartmentCardProps> = ({ apartment }) => {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute bottom-0 left-0 bg-nabeul-yellow text-black py-1 px-3 font-semibold">
-            {apartment.price}
+            {apartment.price} DT/nuit
           </div>
         </div>
         

@@ -223,14 +223,15 @@ const Admin = () => {
       return;
     }
 
-    // Ajout automatique de l'unité si non présente
-    const priceWithUnit = newApartment.price.includes('DT/nuit')
-      ? newApartment.price
-      : newApartment.price + ' DT/nuit';
-
+    // Extract numeric value from price
+    const priceValue = parseFloat(newApartment.price?.toString().replace(' DT/nuit', '') || '0');
+    
     const { data, error } = await supabase
       .from('apartments')
-      .insert([{ ...newApartment, price: priceWithUnit }])
+      .insert([{ 
+        ...newApartment, 
+        price: priceValue  // Send numeric value to Supabase
+      }])
       .select();
       
     if (!error && data) {
@@ -257,7 +258,16 @@ const Admin = () => {
   const handleEditApartment = async () => {
     if (!currentApartment) return;
 
-    const { data, error } = await supabase.from('apartments').update({ ...newApartment }).eq('id', currentApartment.id).select();
+    const priceValue = parseFloat(newApartment.price?.toString().replace(' DT/nuit', '') || '0');
+    
+    const { data, error } = await supabase
+      .from('apartments')
+      .update({ 
+        ...newApartment,
+        price: priceValue  // Send numeric value to Supabase
+      })
+      .eq('id', currentApartment.id)
+      .select();
     if (!error && data) {
       setApartmentsList(prev => prev.map(apt => apt.id === currentApartment.id ? data[0] : apt));
       toast({ title: "Appartement modifié", description: "Les modifications ont été enregistrées avec succès.", duration: 3000 });

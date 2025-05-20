@@ -72,17 +72,16 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="rounded-xl overflow-hidden shadow-md h-96">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51580.31866021501!2d10.676678887412075!3d36.45594401839781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13029895efbec65d%3A0x65bc5efbce842198!2sNabeul%2C%20Tunisia!5e0!3m2!1sen!2sus!4v1663764144207!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Carte de Nabeul"
-              ></iframe>
+            <div className="rounded-xl overflow-hidden shadow-md h-96 flex items-center justify-center bg-nabeul-sand">
+              <a
+                href="https://www.google.com/maps?q=Nabeul,+Tunisia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-xl px-8 py-4 rounded-full shadow-lg hover:bg-nabeul-yellow hover:text-black transition-colors font-serif font-semibold"
+                style={{ textDecoration: "none" }}
+              >
+                 Voir la carte de Nabeul sur Google Maps
+              </a>
             </div>
           </div>
           
