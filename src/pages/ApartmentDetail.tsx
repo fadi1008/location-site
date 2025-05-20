@@ -136,13 +136,26 @@ const ApartmentDetail = () => {
           
           <div className="bg-white shadow-md rounded-xl p-6 mb-10">
             <h2 className="text-2xl font-serif mb-4">Description</h2>
-            <p className="text-gray-700">
-              Découvrez cette magnifique propriété située dans l'une des plus belles régions de Nabeul. Cet espace offre un cadre idyllique pour vos vacances en Tunisie, alliant confort moderne et charme local.
-              <br /><br />
-              Profitez de tout ce que la région a à offrir : plages de sable fin, restaurants locaux, marchés traditionnels et attractions touristiques, tous facilement accessibles depuis cette location de charme.
-              <br /><br />
-              Ne manquez pas cette opportunité de vivre une expérience authentique dans un cadre exceptionnel. Contactez-nous dès maintenant pour plus d'informations ou pour réserver.
-            </p>
+            <div className="text-gray-700 whitespace-pre-line">
+              {apartment.description && apartment.description.trim() !== "" ? (
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: apartment.description.replace(
+                      /(https?:\/\/[^\s`]+)/g,
+                      '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-nabeul-blue underline break-all">$1</a>'
+                    )
+                  }}
+                />
+              ) : (
+                <>
+                  Découvrez cette magnifique propriété située dans l'une des plus belles régions de Nabeul. Cet espace offre un cadre idyllique pour vos vacances en Tunisie, alliant confort moderne et charme local.
+                  <br /><br />
+                  Profitez de tout ce que la région a à offrir : plages de sable fin, restaurants locaux, marchés traditionnels et attractions touristiques, tous facilement accessibles depuis cette location de charme.
+                  <br /><br />
+                  Ne manquez pas cette opportunité de vivre une expérience authentique dans un cadre exceptionnel. Contactez-nous dès maintenant pour plus d'informations ou pour réserver.
+                </>
+              )}
+            </div>
           </div>
         </div>
       </main>

@@ -248,7 +248,9 @@ const Admin = () => {
   const openEditDialog = (apartment: ApartmentType) => {
     setCurrentApartment(apartment);
     setNewApartment({
-      ...apartment
+      ...apartment,
+      // Convert price to string if it's a number
+      price: typeof apartment.price === 'number' ? `${apartment.price}` : apartment.price
     });
     setApartmentType(apartment.title.toLowerCase().includes('villa') ? 'villa' : 'appartement');
     setSelectedLocation(getLocationValue(apartment.location));
@@ -258,7 +260,10 @@ const Admin = () => {
   const handleEditApartment = async () => {
     if (!currentApartment) return;
 
-    const priceValue = parseFloat(newApartment.price?.toString().replace(' DT/nuit', '') || '0');
+    // Safely convert price to number, handling both string and number types
+    const priceValue = typeof newApartment.price === 'string' 
+      ? parseFloat(newApartment.price.replace(/[^\d.]/g, '')) || 0 
+      : newApartment.price || 0;
     
     const { data, error } = await supabase
       .from('apartments')
