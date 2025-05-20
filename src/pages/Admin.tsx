@@ -20,7 +20,8 @@ const locationOptions = [
   { value: 'lido-darchaben', label: 'Lido Darchaben' },
   { value: 'sidi-mahrsi', label: 'Sidi Mahrsi' },
   { value: 'afh', label: 'AFH' },
-  { value: 'hammamet', label: 'Hammamet' }
+  { value: 'hammamet', label: 'Hammamet' },
+  { value: 'mrezga', label: 'mrezga' }
 ];
 
 const apartmentTypeOptions = [
@@ -222,10 +223,16 @@ const Admin = () => {
       return;
     }
 
+    // Ajout automatique de l'unité si non présente
+    const priceWithUnit = newApartment.price.includes('DT/nuit')
+      ? newApartment.price
+      : newApartment.price + ' DT/nuit';
+
     const { data, error } = await supabase
       .from('apartments')
-      .insert([newApartment])
+      .insert([{ ...newApartment, price: priceWithUnit }])
       .select();
+      
     if (!error && data) {
       setApartmentsList(prev => [...prev, ...data]);
       toast({ title: "Appartement ajouté", description: "L'appartement a été ajouté avec succès.", duration: 3000 });
@@ -382,7 +389,7 @@ const Admin = () => {
         location: locationLabel
       }));
     }
-  }, [selectedLocation, locationOptions, setNewApartment]);
+  }, [selectedLocation, setNewApartment]);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -480,7 +487,7 @@ const Admin = () => {
                           <td className="border px-4 py-2">{apartment.id}</td>
                           <td className="border px-4 py-2">{apartment.title}</td>
                           <td className="border px-4 py-2">{apartment.location}</td>
-                          <td className="border px-4 py-2">{apartment.price}</td>
+                          <td className="border px-4 py-2">{apartment.price} DT/nuit</td>
                           <td className="border px-4 py-2">
                             <div className="flex space-x-2">
                               <Button 
@@ -804,9 +811,9 @@ const Admin = () => {
             <div className="grid grid-cols-1 gap-2">
               <label className="font-medium">Prix*</label>
               <Input
-                placeholder="Ex: 500 DT / nuit"
-                value={newApartment.price}
-                onChange={(e) => setNewApartment({...newApartment, price: e.target.value})}
+                placeholder="Ex: 120"
+                value={newApartment.price?.replace(' DT/nuit', '') || ''}
+                onChange={(e) => setNewApartment({...newApartment, price: e.target.value + ' DT/nuit'})}
               />
             </div>
             
