@@ -34,15 +34,14 @@ const ApartmentGrid: React.FC<ApartmentGridProps> = ({ apartments }) => {
     // Then sort based on selected sort option
     if (sortOption === 'price-asc') {
       return filtered.sort((a, b) => {
-        // Extract numeric part of price (assuming format like "500 DT / nuit")
-        const priceA = parseInt(a.price.replace(/[^0-9]/g, ''));
-        const priceB = parseInt(b.price.replace(/[^0-9]/g, ''));
+        const priceA = parseInt(a.price?.replace(/[^0-9]/g, '') || '0', 10);
+        const priceB = parseInt(b.price?.replace(/[^0-9]/g, '') || '0', 10);
         return priceA - priceB;
       });
     } else if (sortOption === 'price-desc') {
       return filtered.sort((a, b) => {
-        const priceA = parseInt(a.price.replace(/[^0-9]/g, ''));
-        const priceB = parseInt(b.price.replace(/[^0-9]/g, ''));
+        const priceA = parseInt(a.price?.replace(/[^0-9]/g, '') || '0', 10);
+        const priceB = parseInt(b.price?.replace(/[^0-9]/g, '') || '0', 10);
         return priceB - priceA;
       });
     }
