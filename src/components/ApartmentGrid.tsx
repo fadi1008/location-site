@@ -34,14 +34,14 @@ const ApartmentGrid: React.FC<ApartmentGridProps> = ({ apartments }) => {
     // Then sort based on selected sort option
     if (sortOption === 'price-asc') {
       return filtered.sort((a, b) => {
-        const priceA = parseInt(a.price?.replace(/[^0-9]/g, '') || '0', 10);
-        const priceB = parseInt(b.price?.replace(/[^0-9]/g, '') || '0', 10);
+        const priceA = Number((a.price || '').toString().replace(/[^0-9.]/g, '')) || 0;
+        const priceB = Number((b.price || '').toString().replace(/[^0-9.]/g, '')) || 0;
         return priceA - priceB;
       });
     } else if (sortOption === 'price-desc') {
       return filtered.sort((a, b) => {
-        const priceA = parseInt(a.price?.replace(/[^0-9]/g, '') || '0', 10);
-        const priceB = parseInt(b.price?.replace(/[^0-9]/g, '') || '0', 10);
+        const priceA = Number((a.price || '').toString().replace(/[^0-9.]/g, '')) || 0;
+        const priceB = Number((b.price || '').toString().replace(/[^0-9.]/g, '')) || 0;
         return priceB - priceA;
       });
     }
