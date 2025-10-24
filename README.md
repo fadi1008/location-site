@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
+# Location Site - React + TypeScript + Tailwind
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/f8dc0abd-07a9-42ce-a232-c0d71e140d8c
+This is a **rental management web application** built with React, TypeScript, Tailwind CSS, and shadcn-ui.  
+It allows users to browse apartments, filter listings, view details, and manage their rentals efficiently.
+ 
+**Deployed on Vercel:** [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## My Role
 
-**Use Lovable**
+- Developed the **entire frontend** using React, TypeScript, and Tailwind CSS.
+- Implemented **dynamic components** such as `ApartmentCard`, `ApartmentFilters`, and `ApartmentGrid`.
+- Managed **state, hooks, and utilities** for filtering and user interaction.
+- Integrated **Supabase** for backend services (client setup, types, and data management).
+- Deployed the project fully on **Vercel**.
+- Maintained the project structure for scalability and maintainability.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f8dc0abd-07a9-42ce-a232-c0d71e140d8c) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies Used
 
-**Use your preferred IDE**
+- **Frontend:** React, TypeScript  
+- **UI Library:** shadcn-ui, Tailwind CSS  
+- **Backend:** Supabase (database and authentication)  
+- **Build Tools:** Vite  
+- **Deployment:** Vercel  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Running the Project Locally
 
-Follow these steps:
+Make sure you have [Node.js & npm](https://github.com/nvm-sh/nvm#installing-and-updating) installed. Then follow these steps:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate into the project directory
+cd location-site
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f8dc0abd-07a9-42ce-a232-c0d71e140d8c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
