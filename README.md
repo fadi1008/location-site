@@ -5,7 +5,7 @@
 This is a **rental management web application** built with React, TypeScript, Tailwind CSS, and shadcn-ui.  
 It allows users to browse apartments, filter listings, view details, and manage their rentals efficiently.
  
-**Deployed on Vercel:** [https://your-vercel-url.vercel.app](https://your-vercel-url.vercel.app)
+**Deployed on Vercel:** [https://location-site-five.vercel.app/](https://location-site-five.vercel.app/)
 
 ---
 
