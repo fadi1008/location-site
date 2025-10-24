@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 // REMOVE this line:
 // import apartments from '../data/apartments';
 import { ApartmentType } from '../components/ApartmentCard';
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/services/supabase/client";
 import { Loader2 } from 'lucide-react';
 
 // Predefined options for the admin interface

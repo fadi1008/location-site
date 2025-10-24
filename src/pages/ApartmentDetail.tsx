@@ -7,7 +7,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import apartments from '../data/apartments';
 import { useEffect,} from 'react';
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/services/supabase/client";
 import { ApartmentType } from '../components/ApartmentCard';
 
 const ApartmentDetail = () => {

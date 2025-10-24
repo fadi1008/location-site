@@ -6,7 +6,7 @@ import ApartmentGrid from '../components/ApartmentGrid';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import { useEffect, useState } from 'react';
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/services/supabase/client";
 import { ApartmentType } from '../components/ApartmentCard';
 // REMOVE this line:
 // import apartments from '../data/apartments';
