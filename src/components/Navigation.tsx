@@ -38,9 +38,9 @@ const Navigation = () => {
       >
         <div className="container-custom flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/82709799-14e8-4c4c-8dc0-890697718779.png" 
-              alt="Location à Nabeul Logo" 
+            <img
+              src="/uploads/82709799-14e8-4c4c-8dc0-890697718779.png"
+              alt="Location à Nabeul Logo"
               className="h-20 w-auto" // Increased height from h-16 to h-20
             />
             <span className="font-serif font-medium text-lg md:text-xl text-nabeul-black">
